@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { Locale } from "@/lib/content";
 import { Button, Card, Container, Section } from "@/components/ui";
@@ -148,26 +148,10 @@ export function HomePage({ locale }: { locale: Locale }) {
           </h2>
 
           <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
-            <Stat
-              label="동시 접속"
-              value="Target 30"
-              note="Load test scenario"
-            />
-            <Stat
-              label="번역 정확도"
-              value="Target BLEU 70"
-              note="평가 계획 기반"
-            />
-            <Stat
-              label="프레임"
-              value="Target 70fps"
-              note="멀미 저감 목표"
-            />
-            <Stat
-              label="안전 시나리오"
-              value="Target 5종"
-              note="화재/추락/감전 등"
-            />
+            <Stat label="동시 접속" value="Target 30" note="Load test scenario" />
+            <Stat label="번역 정확도" value="Target BLEU 70" note="평가 계획 기반" />
+            <Stat label="프레임" value="Target 70fps" note="멀미 저감 목표" />
+            <Stat label="안전 시나리오" value="Target 5종" note="화재/추락/감전 등" />
           </div>
         </Container>
       </Section>
@@ -175,9 +159,7 @@ export function HomePage({ locale }: { locale: Locale }) {
       {/* ================= PROOF ================= */}
       <Section id="proof">
         <Container>
-          <h2 className="text-2xl font-semibold sm:text-3xl">
-            신뢰 근거
-          </h2>
+          <h2 className="text-2xl font-semibold sm:text-3xl">신뢰 근거</h2>
 
           <div className="mt-6 flex flex-wrap gap-2">
             <Badge>ETRI XR 협업 기술 기반</Badge>
@@ -207,10 +189,7 @@ export function HomePage({ locale }: { locale: Locale }) {
               <Button href={`/${locale}/request-demo`} variant="primary">
                 전략 데모 요청
               </Button>
-              <Button
-                href={`/${locale}/request-demo?type=partner`}
-                variant="secondary"
-              >
+              <Button href={`/${locale}/request-demo?type=partner`} variant="secondary">
                 파트너십 문의
               </Button>
             </div>
