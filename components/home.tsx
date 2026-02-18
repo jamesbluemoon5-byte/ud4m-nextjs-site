@@ -1,4 +1,4 @@
-import Link from "next/link";
+﻿import Link from "next/link";
 import Image from "next/image";
 import { Button, Card, Container, Section } from "@/components/ui";
 
@@ -46,7 +46,7 @@ export function HomePage({ locale }: { locale: Locale }) {
   const copy = isEN
     ? {
         heroKicker: "AI-powered cross-device XR training",
-        heroTitle: "Industrial XR Training · Digital Twin Infrastructure",
+        heroTitle: "Industrial XR Training 쨌 Digital Twin Infrastructure",
         heroSub:
           "Operational-grade training for shipbuilding and high-risk procedures. Cross-device collaboration, measurable logs, scalable rollout.",
         cta1: "Request Strategic Demo",
@@ -69,28 +69,28 @@ export function HomePage({ locale }: { locale: Locale }) {
         final2: "Partnership",
       }
     : {
-        heroKicker: "AI 기반 크로스 디바이스 XR 교육",
-        heroTitle: "산업용 XR 교육 · 디지털 트윈 인프라",
+        heroKicker: "AI 湲곕컲 ?щ줈???붾컮?댁뒪 XR 援먯쑁",
+        heroTitle: "?곗뾽??XR 援먯쑁 쨌 ?붿????몄쐢 ?명봽??,
         heroSub:
-          "조선·고위험 공정 교육을 운영 등급 XR로 표준화합니다. 크로스 디바이스 협업, 측정 가능한 로그, 확장 가능한 도입 구조.",
-        cta1: "전략 데모 요청",
-        cta2: "솔루션 보기",
-        solutionsTitle: "3개 라인업, 1개 메인 축",
+          "議곗꽑쨌怨좎쐞??怨듭젙 援먯쑁???댁쁺 ?깃툒 XR濡??쒖??뷀빀?덈떎. ?щ줈???붾컮?댁뒪 ?묒뾽, 痢≪젙 媛?ν븳 濡쒓렇, ?뺤옣 媛?ν븳 ?꾩엯 援ъ“.",
+        cta1: "?꾨왂 ?곕え ?붿껌",
+        cta2: "?붾（??蹂닿린",
+        solutionsTitle: "3媛??쇱씤?? 1媛?硫붿씤 異?,
         solutionsSub:
-          "1순위(매출): XR 교육 플랫폼. 2순위: 디지털트윈 운영. 별도 라인: 메타도어 공간통신.",
-        whyTitle: "지금 필요한 이유",
+          "1?쒖쐞(留ㅼ텧): XR 援먯쑁 ?뚮옯?? 2?쒖쐞: ?붿??명듃???댁쁺. 蹂꾨룄 ?쇱씤: 硫뷀??꾩뼱 怨듦컙?듭떊.",
+        whyTitle: "吏湲??꾩슂???댁쑀",
         whyBullets: [
-          "다국적 인력 환경에서 교육 표준화가 필요.",
-          "위험 시나리오는 현장 노출 없이 반복 훈련.",
-          "도입/운영을 위해 로그·거버넌스가 필수.",
+          "?ㅺ뎅???몃젰 ?섍꼍?먯꽌 援먯쑁 ?쒖??붽? ?꾩슂.",
+          "?꾪뿕 ?쒕굹由ъ삤???꾩옣 ?몄텧 ?놁씠 諛섎났 ?덈젴.",
+          "?꾩엯/?댁쁺???꾪빐 濡쒓렇쨌嫄곕쾭?뚯뒪媛 ?꾩닔.",
         ],
-        metricsTitle: "목표 지표 (공개 표기: Target)",
-        logosTitle: "파트너/근거(로고)",
-        finalTitle: "지금 도입 전략을 논의하세요.",
+        metricsTitle: "紐⑺몴 吏??(怨듦컻 ?쒓린: Target)",
+        logosTitle: "?뚰듃??洹쇨굅(濡쒓퀬)",
+        finalTitle: "吏湲??꾩엯 ?꾨왂???쇱쓽?섏꽭??",
         finalCopy:
-          "디바이스, 언어, 데이터 경계, 보안 요구를 기준으로 도입 로드맵을 제안합니다.",
-        final1: "전략 컨설팅 요청",
-        final2: "파트너십 문의",
+          "?붾컮?댁뒪, ?몄뼱, ?곗씠??寃쎄퀎, 蹂댁븞 ?붽뎄瑜?湲곗??쇰줈 ?꾩엯 濡쒕뱶留듭쓣 ?쒖븞?⑸땲??",
+        final1: "?꾨왂 而⑥꽕???붿껌",
+        final2: "?뚰듃?덉떗 臾몄쓽",
       };
 
   return (
@@ -129,7 +129,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <p className="mt-6 text-xs text-white/45">
                   {isEN
                     ? "Public site uses Target/Pilot wording. Detailed results shared under NDA."
-                    : "공개 웹은 Target/Pilot 표기만 사용. 상세 성과는 NDA 후 공유."}
+                    : "怨듦컻 ?뱀? Target/Pilot ?쒓린留??ъ슜. ?곸꽭 ?깃낵??NDA ??怨듭쑀."}
                 </p>
               </div>
 
@@ -166,11 +166,11 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <div className="mt-3 relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10">
                   <Image src="/assets/solutions/thumb-xr.webp" alt="XR Training" fill className="object-cover" />
                 </div>
-                <div className="mt-4 text-lg font-semibold">{isEN ? "XR Training Platform" : "XR 교육 플랫폼"}</div>
+                <div className="mt-4 text-lg font-semibold">{isEN ? "XR Training Platform" : "XR 援먯쑁 ?뚮옯??}</div>
                 <div className="mt-2 text-sm leading-relaxed text-white/70">
                   {isEN
                     ? "AI-assisted, cross-device XR sessions for training and supervision. Logs and governance built-in."
-                    : "AI 보조 + 크로스 디바이스 XR 세션으로 교육/감독 표준화. 로그/거버넌스 포함."}
+                    : "AI 蹂댁“ + ?щ줈???붾컮?댁뒪 XR ?몄뀡?쇰줈 援먯쑁/媛먮룆 ?쒖??? 濡쒓렇/嫄곕쾭?뚯뒪 ?ы븿."}
                 </div>
               </Card>
             </Link>
@@ -181,11 +181,11 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <div className="mt-3 relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10">
                   <Image src="/assets/solutions/thumb-dt.webp" alt="Digital Twin" fill className="object-cover" />
                 </div>
-                <div className="mt-4 text-lg font-semibold">{isEN ? "Digital Twin / Energy AR" : "디지털트윈 · 에너지 AR"}</div>
+                <div className="mt-4 text-lg font-semibold">{isEN ? "Digital Twin / Energy AR" : "?붿??명듃??쨌 ?먮꼫吏 AR"}</div>
                 <div className="mt-2 text-sm leading-relaxed text-white/70">
                   {isEN
                     ? "Operational visualization workflows for infrastructure. Best positioned as an expansion layer."
-                    : "인프라 운영 가시화 워크플로. 메인 축이 아니라 확장 레이어로 최적."}
+                    : "?명봽???댁쁺 媛?쒗솕 ?뚰겕?뚮줈. 硫붿씤 異뺤씠 ?꾨땲???뺤옣 ?덉씠?대줈 理쒖쟻."}
                 </div>
               </Card>
             </Link>
@@ -200,7 +200,7 @@ export function HomePage({ locale }: { locale: Locale }) {
                 <div className="mt-2 text-sm leading-relaxed text-white/70">
                   {isEN
                     ? "Large-format spatial communication & interactive signage. Keep as a distinct product brand."
-                    : "대형 디스플레이 기반 공간통신/사이니지. 별도 제품 라인으로 분리."}
+                    : "????붿뒪?뚮젅??湲곕컲 怨듦컙?듭떊/?ъ씠?덉?. 蹂꾨룄 ?쒗뭹 ?쇱씤?쇰줈 遺꾨━."}
                 </div>
               </Card>
             </Link>
@@ -226,10 +226,10 @@ export function HomePage({ locale }: { locale: Locale }) {
             <div>
               <h3 className="text-base font-semibold text-white/80">{copy.metricsTitle}</h3>
               <div className="mt-4 grid gap-3 sm:grid-cols-2">
-                <Stat label={isEN ? "Concurrent users" : "동시 접속"} value="Target 30" note={isEN ? "Load test scenario" : "부하 테스트 시나리오"} />
-                <Stat label={isEN ? "Translation accuracy" : "번역 정확도"} value="Target BLEU 70" note={isEN ? "Evaluation plan" : "평가 계획 기반"} />
-                <Stat label={isEN ? "Frame rate" : "프레임"} value="Target 70fps" note={isEN ? "Comfort goal" : "멀미 저감 목표"} />
-                <Stat label={isEN ? "Safety scenarios" : "안전 시나리오"} value={isEN ? "Target 5" : "Target 5종"} note={isEN ? "Fire/Fall/Electric/..." : "화재/추락/감전/..."} />
+                <Stat label={isEN ? "Concurrent users" : "?숈떆 ?묒냽"} value="Target 30" note={isEN ? "Load test scenario" : "遺???뚯뒪???쒕굹由ъ삤"} />
+                <Stat label={isEN ? "Translation accuracy" : "踰덉뿭 ?뺥솗??} value="Target BLEU 70" note={isEN ? "Evaluation plan" : "?됯? 怨꾪쉷 湲곕컲"} />
+                <Stat label={isEN ? "Frame rate" : "?꾨젅??} value="Target 70fps" note={isEN ? "Comfort goal" : "硫誘??媛?紐⑺몴"} />
+                <Stat label={isEN ? "Safety scenarios" : "?덉쟾 ?쒕굹由ъ삤"} value={isEN ? "Target 5" : "Target 5醫?} note={isEN ? "Fire/Fall/Electric/..." : "?붿옱/異붾씫/媛먯쟾/..."} />
               </div>
             </div>
           </div>
