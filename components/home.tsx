@@ -1,95 +1,98 @@
 import Link from "next/link";
 import Image from "next/image";
-import { HOME, Locale } from "@/lib/content";
+import { Locale } from "@/lib/content";
 import { Button, Card, Container, Section } from "@/components/ui";
 
+function Badge({ children }: { children: React.ReactNode }) {
+  return (
+    <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1 text-xs text-white/70">
+      {children}
+    </span>
+  );
+}
+
+function Stat({
+  label,
+  value,
+  note,
+}: {
+  label: string;
+  value: string;
+  note?: string;
+}) {
+  return (
+    <div className="rounded-2xl border border-white/10 bg-white/[0.03] p-5">
+      <div className="text-xs text-white/60">{label}</div>
+      <div className="mt-2 text-2xl font-semibold">{value}</div>
+      {note && <div className="mt-2 text-xs text-white/50">{note}</div>}
+    </div>
+  );
+}
+
 export function HomePage({ locale }: { locale: Locale }) {
-  const c = HOME[locale];
+  const t =
+    locale === "en"
+      ? {
+          heroTitle: "Industrial XR Training & Digital Twin Infrastructure",
+          heroSub:
+            "Deploy operational-grade XR training for shipbuilding and high-risk operations. Cross-device collaboration, measurable logs, scalable rollout.",
+          primary: "Request Strategic Demo",
+          secondary: "Explore Solutions",
+        }
+      : {
+          heroTitle: "산업용 XR 교육 · 디지털 트윈 인프라",
+          heroSub:
+            "조선·고위험 공정 교육을 운영 등급 XR로 표준화합니다. 크로스 디바이스 협업, 측정 가능한 로그, 확장 가능한 도입 구조.",
+          primary: "전략 데모 요청",
+          secondary: "솔루션 보기",
+        };
 
   return (
     <>
+      {/* ================= HERO ================= */}
       <Section id="hero">
         <Container>
-          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-14 sm:px-10 sm:py-20">
-            {/* subtle background glow */}
-            <div className="pointer-events-none absolute -top-24 left-1/2 h-64 w-[36rem] -translate-x-1/2 rounded-full bg-white/10 blur-3xl" />
-
-            <div className="relative grid items-center gap-12 lg:grid-cols-2">
-              {/* Left */}
+          <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] px-6 py-16">
+            <div className="grid items-center gap-12 lg:grid-cols-2">
               <div>
-                <div className="flex flex-wrap items-center gap-2 text-xs text-white/60">
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">
-                    Shipbuilding XR
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">
-                    Cross-device collaboration
-                  </span>
-                  <span className="rounded-full border border-white/10 bg-white/[0.03] px-3 py-1">
-                    Digital twin ready
-                  </span>
+                <div className="flex flex-wrap gap-2">
+                  <Badge>AI 기반 XR 교육</Badge>
+                  <Badge>Shipbuilding</Badge>
+                  <Badge>Safety</Badge>
+                  <Badge>Digital Twin</Badge>
                 </div>
 
-                <h1 className="mt-6 text-4xl font-semibold tracking-tight sm:text-5xl lg:text-6xl">
-                  {c.hero.h1}
+                <h1 className="mt-6 text-4xl font-semibold sm:text-5xl">
+                  {t.heroTitle}
                 </h1>
 
-                <p className="mt-5 max-w-xl text-base leading-relaxed text-white/75 sm:text-lg">
-                  {c.hero.h2}
+                <p className="mt-5 max-w-xl text-base text-white/75">
+                  {t.heroSub}
                 </p>
 
-                <ul className="mt-6 space-y-2 text-sm text-white/70">
-                  {c.hero.proof.map((p) => (
-                    <li key={p} className="flex gap-2">
-                      <span className="mt-2 inline-block h-1.5 w-1.5 shrink-0 rounded-full bg-white/60" />
-                      <span>{p}</span>
-                    </li>
-                  ))}
-                </ul>
-
-                <div className="mt-8 flex flex-col gap-3 sm:flex-row">
-                  <Button href={c.hero.ctaPrimary.href} variant="primary">
-                    {c.hero.ctaPrimary.label}
+                <div className="mt-8 flex gap-3">
+                  <Button href={`/${locale}/request-demo`} variant="primary">
+                    {t.primary}
                   </Button>
-                  <Button href={c.hero.ctaSecondary.href} variant="secondary">
-                    {c.hero.ctaSecondary.label}
+                  <Button href="#solutions" variant="secondary">
+                    {t.secondary}
                   </Button>
                 </div>
 
                 <p className="mt-6 text-xs text-white/45">
-                  {locale === "en"
-                    ? "Public site uses Target/Pilot wording. Detailed numbers shared under NDA."
-                    : "공개 웹은 Target/Pilot 표기만 사용. 상세 수치는 NDA 후 공유."}
+                  공개 웹은 Target/Pilot 표기만 사용. 상세 성과/고객 식별 정보는 NDA 후 제공.
                 </p>
               </div>
 
-              {/* Right: Screenshot */}
-              <div className="relative">
-                <div className="absolute -inset-4 rounded-3xl bg-gradient-to-tr from-white/10 to-transparent blur-2xl" />
-                <div className="relative overflow-hidden rounded-3xl border border-white/10 bg-white/[0.03] p-4 shadow-2xl">
-                  <div className="flex items-center justify-between gap-3 rounded-2xl border border-white/10 bg-black/30 px-4 py-3">
-                    <div className="text-xs font-semibold text-white/80">
-                      UD4M Shipyard Digital Twin
-                    </div>
-                    <div className="text-xs text-white/50">
-                      {locale === "en" ? "Live session" : "라이브 세션"}
-                    </div>
-                  </div>
-
-                  <div className="mt-4 relative aspect-[16/10] w-full overflow-hidden rounded-2xl border border-white/10">
-                    <Image
-                      src="/hero-shipyard.png"
-                      alt="UD4M Shipyard XR Collaboration"
-                      fill
-                      priority
-                      className="object-cover"
-                    />
-                  </div>
-
-                  <div className="mt-3 text-xs text-white/55">
-                    {locale === "en"
-                      ? "Shipbuilding XR collaboration session (hero visual)."
-                      : "조선 XR 협업 세션(히어로 비주얼)."}
-                  </div>
+              <div className="relative overflow-hidden rounded-3xl border border-white/10 p-4">
+                <div className="relative aspect-[16/10] w-full">
+                  <Image
+                    src="/hero-shipyard.png"
+                    alt="UD4M Shipyard XR Collaboration"
+                    fill
+                    priority
+                    className="rounded-2xl object-cover"
+                  />
                 </div>
               </div>
             </div>
@@ -97,101 +100,118 @@ export function HomePage({ locale }: { locale: Locale }) {
         </Container>
       </Section>
 
-
-      <Section id="industries">
+      {/* ================= SOLUTIONS ================= */}
+      <Section id="solutions">
         <Container>
-          <div className="flex items-end justify-between gap-6">
-            <h2 className="text-2xl font-semibold sm:text-3xl">
-              {c.industriesTitle}
-            </h2>
-            <Link
-              href={`/${locale}/industries`}
-              className="text-sm text-white/70 hover:text-white"
-            >
-              {locale === "en" ? "All industries →" : "산업 전체 →"}
-            </Link>
-          </div>
+          <h2 className="text-2xl font-semibold sm:text-3xl">
+            3개 라인업, 1개 메인 축
+          </h2>
 
           <div className="mt-8 grid gap-4 md:grid-cols-3">
-            {c.industries.map((card) => (
-              <Link key={card.title} href={card.href}>
-                <Card>
-                  <div className="text-lg font-semibold">{card.title}</div>
-                  <div className="mt-2 text-sm leading-relaxed text-white/70">
-                    {card.desc}
-                  </div>
-                  <div className="mt-4 text-sm text-white/80">
-                    {locale === "en" ? "View →" : "보기 →"}
-                  </div>
-                </Card>
-              </Link>
-            ))}
+            <Card>
+              <div className="text-xs text-white/60">PRIMARY</div>
+              <div className="mt-2 text-lg font-semibold">XR 교육 플랫폼</div>
+              <div className="mt-2 text-sm text-white/70">
+                AI 기반 크로스 디바이스 XR 세션으로 고위험 공정 교육을 표준화.
+                다국어 지원, 반복 훈련, 세션 로그 기반 운영.
+              </div>
+            </Card>
+
+            <Card>
+              <div className="text-xs text-white/60">SECONDARY</div>
+              <div className="mt-2 text-lg font-semibold">
+                디지털트윈 · 에너지 AR
+              </div>
+              <div className="mt-2 text-sm text-white/70">
+                스캔→모델→운영으로 이어지는 디지털트윈 인프라 확장 축.
+              </div>
+            </Card>
+
+            <Card>
+              <div className="text-xs text-white/60">SEPARATE LINE</div>
+              <div className="mt-2 text-lg font-semibold">
+                METADOOR 공간통신
+              </div>
+              <div className="mt-2 text-sm text-white/70">
+                대형 디스플레이 기반 공간 연결 솔루션.
+              </div>
+            </Card>
           </div>
         </Container>
       </Section>
 
-      <Section id="platform">
+      {/* ================= METRICS ================= */}
+      <Section id="metrics">
         <Container>
-          <div className="grid gap-8 md:grid-cols-2 md:items-start">
-            <Card>
-              <div className="text-sm font-semibold text-white/80">
-                {locale === "en" ? "Platform" : "플랫폼"}
-              </div>
+          <h2 className="text-2xl font-semibold sm:text-3xl">
+            목표 지표 (Target 기준)
+          </h2>
 
-              <div className="mt-3 text-sm text-white/70">{c.platformTitle}</div>
-
-              <ul className="mt-3 space-y-1 text-sm text-white/70">
-                {c.platformBullets.map((b) => (
-                  <li key={b}>• {b}</li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <Button href={`/${locale}/platform`} variant="secondary">
-                  {locale === "en" ? "View details" : "상세 보기"}
-                </Button>
-              </div>
-            </Card>
-
-            <Card>
-              <div className="text-sm font-semibold text-white/80">
-                {locale === "en" ? "IP & Technology" : "IP/기술"}
-              </div>
-
-              <div className="mt-3 text-sm text-white/70">{c.ipTitle}</div>
-
-              <ul className="mt-3 space-y-1 text-sm text-white/70">
-                {c.ipBullets.map((b) => (
-                  <li key={b}>• {b}</li>
-                ))}
-              </ul>
-
-              <div className="mt-6">
-                <Button href={`/${locale}/ip`} variant="secondary">
-                  {locale === "en" ? "View IP" : "IP 보기"}
-                </Button>
-              </div>
-            </Card>
+          <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-4">
+            <Stat
+              label="동시 접속"
+              value="Target 30"
+              note="Load test scenario"
+            />
+            <Stat
+              label="번역 정확도"
+              value="Target BLEU 70"
+              note="평가 계획 기반"
+            />
+            <Stat
+              label="프레임"
+              value="Target 70fps"
+              note="멀미 저감 목표"
+            />
+            <Stat
+              label="안전 시나리오"
+              value="Target 5종"
+              note="화재/추락/감전 등"
+            />
           </div>
         </Container>
       </Section>
 
+      {/* ================= PROOF ================= */}
+      <Section id="proof">
+        <Container>
+          <h2 className="text-2xl font-semibold sm:text-3xl">
+            신뢰 근거
+          </h2>
+
+          <div className="mt-6 flex flex-wrap gap-2">
+            <Badge>ETRI XR 협업 기술 기반</Badge>
+            <Badge>AR 상호작용/협업 특허 보유</Badge>
+            <Badge>조선 XR 교육 실증 프로젝트</Badge>
+            <Badge>디지털트윈 스캔→운영 경험</Badge>
+          </div>
+
+          <p className="mt-6 text-xs text-white/45">
+            상세 레퍼런스 및 고객 식별 정보는 NDA 체결 후 공유.
+          </p>
+        </Container>
+      </Section>
+
+      {/* ================= FINAL CTA ================= */}
       <Section id="cta">
         <Container>
-          <div className="rounded-3xl border border-white/10 bg-white/5 p-10 text-center">
-            <h2 className="text-2xl font-semibold sm:text-3xl">{c.finalTitle}</h2>
-            <p className="mx-auto mt-4 max-w-2xl text-sm leading-relaxed text-white/70">
-              {c.finalCopy}
+          <div className="rounded-3xl border border-white/10 bg-white/[0.03] p-10 text-center">
+            <h2 className="text-2xl font-semibold sm:text-3xl">
+              지금 도입 전략을 논의하세요.
+            </h2>
+            <p className="mt-4 text-sm text-white/70">
+              범위, 디바이스, 언어, 보안 요구를 기준으로 도입 로드맵을 제안합니다.
             </p>
-            <div className="mt-8 flex flex-col justify-center gap-3 sm:flex-row">
+
+            <div className="mt-8 flex justify-center gap-3">
               <Button href={`/${locale}/request-demo`} variant="primary">
-                {c.finalPrimary}
+                전략 데모 요청
               </Button>
               <Button
                 href={`/${locale}/request-demo?type=partner`}
                 variant="secondary"
               >
-                {c.finalSecondary}
+                파트너십 문의
               </Button>
             </div>
           </div>
