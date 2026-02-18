@@ -1,40 +1,41 @@
-import Link from "next/link";
+import Image from "next/image";
 import { Container, Section, Card, Button } from "@/components/ui";
 
-export default function IndustryDetail() {
+export default function Page() {
   return (
     <Section>
       <Container>
-        <div className="text-xs text-white/60">
-          <Link href="/kr/industries" className="hover:text-white">← 산업 목록</Link>
-        </div>
+        <h1 className="text-3xl font-semibold sm:text-4xl">에너지·인프라 디지털 트윈</h1>
 
-        <h1 className="mt-3 text-3xl font-semibold sm:text-4xl">에너지·인프라 디지털 트윈</h1>
-        <p className="mt-3 max-w-3xl text-sm leading-relaxed text-white/70">디지털 트윈 가시화 + 현장 XR 업무 흐름으로 운영 가시성을 확보합니다.</p>
+        <div className="mt-6 relative aspect-[16/10] w-full overflow-hidden rounded-3xl border border-white/10">
+          <Image src="/assets/industries/energy/hero.webp" alt="에너지·인프라 디지털 트윈" fill className="object-cover" priority />
+        </div>
 
         <div className="mt-8 grid gap-4 md:grid-cols-2">
           <Card>
-            <div className="text-sm font-semibold text-white/80">산업 문제</div>
+            <div className="text-sm font-semibold text-white/80">핵심 문제</div>
             <ul className="mt-3 space-y-1 text-sm text-white/70">
-              <li>• 현장 교육 비용/리스크</li>
-              <li>• 표준화/언어 장벽</li>
-              <li>• 반복 숙련/감독 필요</li>
+              <li>• 현장 가시성 부족</li>
+<li>• 준공/현황 데이터 유지 비용</li>
+<li>• 공유 3D 뷰 없는 원격 지원 한계</li>
             </ul>
           </Card>
+
           <Card>
-            <div className="text-sm font-semibold text-white/80">운영 솔루션</div>
+            <div className="text-sm font-semibold text-white/80">도입 구성</div>
             <ul className="mt-3 space-y-1 text-sm text-white/70">
-              <li>• 멀티 디바이스 협업 세션</li>
-              <li>• 시나리오 모듈 + 로그</li>
-              <li>• 도입형 아키텍처</li>
+              <li>• 스캔→정합→모델 최적화</li>
+<li>• 뷰어+레이어+운영 워크플로</li>
+<li>• 운영 연계 로드맵</li>
             </ul>
           </Card>
         </div>
 
-        <div className="mt-8 flex flex-col gap-3 sm:flex-row">
+        <div className="mt-10">
           <Button href="/kr/request-demo?industry=energy" variant="primary">데모 요청</Button>
-          <Button href="/kr/platform" variant="secondary">플랫폼</Button>
         </div>
+
+        <p className="mt-6 text-xs text-white/45">공개 웹은 Target/Pilot 표기만 사용. 상세 근거는 NDA 후 제공.</p>
       </Container>
     </Section>
   );

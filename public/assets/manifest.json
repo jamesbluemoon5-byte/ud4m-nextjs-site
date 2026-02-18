@@ -1,0 +1,89 @@
+{
+  "sources": {
+    "xr_edu": "/mnt/data/ＸＲ　교육플랫폼　발표자료　유디포엠.pdf",
+    "company_brief": "/mnt/data/유디포엠 회사소개서_2025업데이트버전.pdf",
+    "metadoor_231221": "/mnt/data/METADOOR소개서_231221.pdf",
+    "metadoor_kor": "/mnt/data/METADOOR_국문.pdf",
+    "ir": "/mnt/data/유디포엠 ir.pdf",
+    "rnd_plan": "/mnt/data/1. 연구개발계획서_전략기술 연구성과 사업화_유디포엠.pdf",
+    "patent_design": "/mnt/data/특허로R&D전략지원_발표자료_UD4M.pdf"
+  },
+  "picked_pages": [
+    {
+      "doc": "xr_edu",
+      "page": 44,
+      "base": "p044"
+    },
+    {
+      "doc": "xr_edu",
+      "page": 15,
+      "base": "p015"
+    },
+    {
+      "doc": "company_brief",
+      "page": 31,
+      "base": "p031"
+    },
+    {
+      "doc": "company_brief",
+      "page": 3,
+      "base": "p003"
+    },
+    {
+      "doc": "metadoor_231221",
+      "page": 36,
+      "base": "p036"
+    },
+    {
+      "doc": "metadoor_231221",
+      "page": 35,
+      "base": "p035"
+    },
+    {
+      "doc": "metadoor_kor",
+      "page": 17,
+      "base": "p017"
+    },
+    {
+      "doc": "metadoor_kor",
+      "page": 18,
+      "base": "p018"
+    },
+    {
+      "doc": "ir",
+      "page": 7,
+      "base": "p007"
+    },
+    {
+      "doc": "ir",
+      "page": 6,
+      "base": "p006"
+    },
+    {
+      "doc": "rnd_plan",
+      "page": 4,
+      "base": "p004"
+    },
+    {
+      "doc": "rnd_plan",
+      "page": 11,
+      "base": "p011"
+    },
+    {
+      "doc": "patent_design",
+      "page": 15,
+      "base": "p015"
+    },
+    {
+      "doc": "patent_design",
+      "page": 17,
+      "base": "p017"
+    },
+    {
+      "doc": "company_brief",
+      "page": 35,
+      "base": "p035"
+    }
+  ],
+  "asset_count": 0
+}
